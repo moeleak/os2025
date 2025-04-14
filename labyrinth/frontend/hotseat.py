@@ -120,7 +120,7 @@ def create_temp_map_file(original_map_file):
 
 
 def get_map_state(labyrinth_path, map_file):
-    print(f"Executing command: {labyrinth_path} --map {map_file} --player 0")
+    # print(f"Executing command: {labyrinth_path} --map {map_file} --player 0")
     result = subprocess.run([str(labyrinth_path), "--map", map_file, "--player", "0"], capture_output=True, text=True)
     if result.returncode != 0:
         print(f"Error: {result.stderr}")
@@ -128,7 +128,7 @@ def get_map_state(labyrinth_path, map_file):
 
 
 def move_player(labyrinth_path, map_file, player_id, direction):
-    print(f"Executing command: {labyrinth_path} --map {map_file} --player {player_id} --move {direction}")
+    # print(f"Executing command: {labyrinth_path} --map {map_file} --player {player_id} --move {direction}")
     result = subprocess.run([str(labyrinth_path), "--map", map_file, "--player", str(player_id), "--move", direction], capture_output=True, text=True)
     if result.returncode != 0:
         print(f"Movement error: {result.stderr}")
